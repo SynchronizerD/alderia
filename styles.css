@@ -164,14 +164,14 @@ body::before {
 
 
 /* ========================================
-   RESPONSIVE - TABLETTES
+   RESPONSIVE
 ======================================== */
 
 @media screen and (max-width: 800px) {
 
 	.site-header {
-    height: 60px;
-}
+		height: 60px;
+	}
 	
     .site-header {
         margin-top: 30px;
@@ -180,11 +180,7 @@ body::before {
 
     .site-header a {
         left: 3%;
-        max-width: 30%;
-    }
 
-    .site-header a img {
-        width: 280px;
     }
 
     .header {
@@ -195,7 +191,7 @@ body::before {
 
     .header span {
         top: 78px;
-        left: 27%;
+        left: 29%;
         font-size: var(--size2);
     }
 
