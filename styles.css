@@ -37,6 +37,9 @@ body{
 	padding: 0;
 	background-color: var(--background);
 	font-family: var(--font7);
+	background-image: url("Images/background.png");
+	background-position: top center;
+	background-repeat: no-repeat;
 }
 body::before {
     content: "";
