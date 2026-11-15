@@ -1,0 +1,77 @@
+:root{
+	--background: #c7c6bf;
+	
+	--font1: 'Bebas', sans-serif;
+	--font2: 'Beforetherain', sans-serif;
+	--font3: 'LithosProblack', sans-serif;
+	--font4: 'LithosProregular', sans-serif;
+	--font5: 'SongOfCoronos', sans-serif;
+	--font6: 'TrajanProRegular', sans-serif;
+	--font7: 'GOTHIC', sans-serif;
+}
+
+/* ========================================
+   BACKGROUND / TEXTURE GRAIN
+======================================== */
+body{
+	position: relative;
+	margin: 0;
+	padding: 0;
+	background-color: var(--background);
+	font-family: var(--font7);
+
+}
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.14;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+}
+
+
+/* ========================================
+   FONTS
+======================================== */
+@font-face {
+    font-family: 'Bebas';
+    src: url('Fonts/Bebas-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Beforetherain';
+    src: url('Fonts/Before The Rain.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'LithosProblack';
+    src: url('Fonts/LithosPro-Black.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'LithosProregular';
+    src: url('Fonts/lithos-pro-regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'SongOfCoronos';
+    src: url('Fonts/Song Of Coronos.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'TrajanProRegular';
+    src: url('Fonts/TrajanPro-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'GOTHIC';
+    src: url('Fonts/GOTHIC.ttf') format('truetype');
+}
+
+
+
+
+
+
+
+
+
+
+
