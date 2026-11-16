@@ -263,8 +263,17 @@ main {
 }
 
 .main-content{
+	position: relative;
 	padding: 10px;
 }	
+
+.main-logo{
+	position: absolute;
+	top: 180px;
+	left: 490px;
+	z-index: 10;
+}
+
 @media screen and (max-width: 1010px) {
     main {
         margin-left: 0;
