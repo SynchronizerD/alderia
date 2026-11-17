@@ -163,74 +163,6 @@ header {
    MAIN
 ======================================== */	
 
-
-.main-map-schedule {
-	position: absolute;
-	top: 236px;
-	left: 400px;
-    display: grid;
-    grid-template-columns: max-content max-content;
-    gap: 26px;
-    align-items: start;
-}
-.main-map, .main-schedule{
-	position: relative;
-	padding: 6px;
-	border-radius: 14px;
-	box-shadow: 0 0 8px rgba(0, 0, 0, 0.20);
-	background-color: var(--cadreOpacity);
-}
-.mainms-box{
-	position: relative;
-	padding: 2px;
-	border-radius: 12px;
-	border: 1px solid var(--border1);
-	background-color: var(--cadre2);
-	box-sizing: border-box;
-}
-.mainmap-img{
-	width: 116px;
-	height: 92px;
-	background-image: url("Images/map.png");
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	border-radius: 8px;
-}
-.mainschedule-img{
-	width: 200px;
-	height: 92px;
-	background-image: url("Images/schedule.png");
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	border-radius: 8px;
-}
-.main-map-scheduletitre {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 6px;
-	text-align: center;
-    box-sizing: border-box;
-    background-color: var(--cadreOpacity1);
-    border-radius: 0 8px 0 8px;
-}
-.main-map-scheduletitre a{
-	font-family: var(--font6);
-	font-size: var(--size3) !important;
-	font-weight: 500;
-	color: var(--text4) !important;
-	text-decoration: none;
-}
-
-
-
-
-
-
-
 main {
     position: relative;
 	left: 50%;
@@ -311,6 +243,13 @@ main {
 .main-ul2 a {
     color: var(--text4);
 }
+
+.main-sidebar a.active {
+    color: var(--text1);
+    /* À adapter à tes variables */
+}
+
+
 .main-ul a span {
     flex: 1;
     display: block;
@@ -348,12 +287,78 @@ main {
 
 .main-content{
 	position: relative;
-	padding: 120px 18px 210px 18px;
+	padding: 126px 18px 210px 18px;
 	color: var(--text5);
 	font-size: var(--size4);
-}	
+	opacity: 1;
+    transition: opacity .2s ease;
+}
+
+.main-content.is-loading {
+    opacity: .3;
+}
 
 
+.main-map-schedule {
+	position: absolute;
+	top: 236px;
+	left: 400px;
+    display: grid;
+    grid-template-columns: max-content max-content;
+    gap: 26px;
+    align-items: start;
+}
+.main-map, .main-schedule{
+	position: relative;
+	padding: 6px;
+	border-radius: 14px;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.20);
+	background-color: var(--cadreOpacity);
+}
+.mainms-box{
+	position: relative;
+	padding: 2px;
+	border-radius: 12px;
+	border: 1px solid var(--border1);
+	background-color: var(--cadre2);
+	box-sizing: border-box;
+}
+.mainmap-img{
+	width: 116px;
+	height: 92px;
+	background-image: url("Images/map.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-radius: 8px;
+}
+.mainschedule-img{
+	width: 200px;
+	height: 92px;
+	background-image: url("Images/schedule.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-radius: 8px;
+}
+.main-map-scheduletitre {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 6px;
+	text-align: center;
+    box-sizing: border-box;
+    background-color: var(--cadreOpacity1);
+    border-radius: 0 8px 0 8px;
+}
+.main-map-scheduletitre a{
+	font-family: var(--font6);
+	font-size: var(--size3) !important;
+	font-weight: 500;
+	color: var(--text4) !important;
+	text-decoration: none;
+}
 
 @media screen and (max-width: 1010px) {
     main {
