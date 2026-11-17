@@ -1,7 +1,7 @@
 
 /* ========================================
    ALDERIA — NAVIGATION DYNAMIQUE
-   Fetch + URL personnalisées
+   Fetch + Hash URL
 ======================================== */
 
 (() => {
@@ -15,11 +15,8 @@
 
     const navLinks = document.querySelectorAll('[data-page]');
 
-    // URL principale
-    const basePath = '/index.html';
-
     // Dossier des pages HTML
-    const pagesDirectory = '/PAGES/';
+    const pagesDirectory = './PAGES/';
 
 
     /* ========================================
@@ -28,9 +25,7 @@
 
     const getCurrentPage = () => {
 
-        const params = new URLSearchParams(window.location.search);
-
-        return params.get('page') || 'accueil';
+        return window.location.hash.replace(/^#/, '') || 'accueil';
 
     };
 
@@ -43,7 +38,6 @@
 
         if (!page || !mainContent) return;
 
-        // État de chargement
         mainContent.classList.add('is-loading');
 
         try {
@@ -59,7 +53,6 @@
                 `${pagesDirectory}${filePath}.html`
             );
 
-            // Vérification du fichier
             if (!response.ok) {
                 throw new Error(`Page introuvable : ${page}`);
             }
@@ -94,7 +87,6 @@
 
         } finally {
 
-            // Fin du chargement
             mainContent.classList.remove('is-loading');
 
         }
@@ -112,7 +104,6 @@
 
             const linkPage = link.dataset.page;
 
-            // Lien actif et parent des sous-pages
             const isActive =
                 linkPage === page ||
                 page.startsWith(linkPage + '/');
@@ -132,17 +123,13 @@
 
         if (!page) return;
 
-        // Construction de la nouvelle URL
-        const newUrl = `${basePath}?page=${encodeURIComponent(page)}`;
+        const newUrl = `#${page}`;
 
         // Évite de recharger la même page
-        if (getCurrentPage() === page) return;
+        if (window.location.hash === newUrl) return;
 
-        // Modification de l'URL sans rechargement
-        history.pushState(null, '', newUrl);
-
-        // Chargement du contenu
-        loadPage(page);
+        // Modification de l'URL
+        window.location.hash = page;
 
     };
 
@@ -170,12 +157,10 @@
        07 — HISTORIQUE NAVIGATEUR
     ======================================== */
 
-    window.addEventListener('popstate', () => {
+    window.addEventListener('hashchange', () => {
 
-        // Récupération de la page précédente
         const page = getCurrentPage();
 
-        // Chargement de son contenu
         loadPage(page);
 
     });
@@ -187,10 +172,8 @@
 
     const init = () => {
 
-        // Récupération de la page actuelle
         const initialPage = getCurrentPage();
 
-        // Chargement initial
         loadPage(initialPage);
 
     };
