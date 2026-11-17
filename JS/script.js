@@ -1,21 +1,42 @@
 
 /* ========================================
    ALDERIA — NAVIGATION DYNAMIQUE
+   Fetch + URL personnalisées
 ======================================== */
 
 (() => {
 
+
     /* ========================================
-       ELEMENTS
+       01 — CONFIGURATION
     ======================================== */
 
     const mainContent = document.querySelector('#main-content');
 
     const navLinks = document.querySelectorAll('[data-page]');
 
+    // URL principale
+    const basePath = '/index.html';
+
+    // Dossier des pages HTML
+    const pagesDirectory = '/PAGES/';
+
 
     /* ========================================
-       CHARGEMENT D'UNE PAGE
+       02 — RÉCUPÉRER LA PAGE DEPUIS L'URL
+    ======================================== */
+
+    const getCurrentPage = () => {
+
+        const params = new URLSearchParams(window.location.search);
+
+        return params.get('page') || 'accueil';
+
+    };
+
+
+    /* ========================================
+       03 — CHARGER UNE PAGE
     ======================================== */
 
     const loadPage = async (page) => {
@@ -27,9 +48,18 @@
 
         try {
 
-            // Récupération du fichier HTML
-            const response = await fetch(`PAGES/${page}.html`);
+            // Construction du chemin du fichier
+            const filePath = page
+                .split('/')
+                .map(segment => encodeURIComponent(segment))
+                .join('/');
 
+            // Récupération du fichier HTML
+            const response = await fetch(
+                `${pagesDirectory}${filePath}.html`
+            );
+
+            // Vérification du fichier
             if (!response.ok) {
                 throw new Error(`Page introuvable : ${page}`);
             }
@@ -43,8 +73,7 @@
             // Mise à jour des liens actifs
             updateActiveLink(page);
 
-            // Retour en haut du contenu
-            mainContent.scrollTop = 0;
+            // Retour en haut
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
@@ -52,7 +81,7 @@
 
         } catch (error) {
 
-            console.error(error);
+            console.error('Erreur de chargement :', error);
 
             mainContent.innerHTML = `
                 <div class="page-error">
@@ -61,8 +90,11 @@
                 </div>
             `;
 
+            updateActiveLink('');
+
         } finally {
 
+            // Fin du chargement
             mainContent.classList.remove('is-loading');
 
         }
@@ -71,7 +103,7 @@
 
 
     /* ========================================
-       MISE À JOUR DU LIEN ACTIF
+       04 — LIENS ACTIFS
     ======================================== */
 
     const updateActiveLink = (page) => {
@@ -80,17 +112,12 @@
 
             const linkPage = link.dataset.page;
 
-            link.classList.remove('active');
+            // Lien actif et parent des sous-pages
+            const isActive =
+                linkPage === page ||
+                page.startsWith(linkPage + '/');
 
-            if (linkPage === page) {
-                link.classList.add('active');
-            }
-
-            // Active également le parent
-            // lorsqu'une sous-page est sélectionnée
-            if (page.startsWith(linkPage + '/')) {
-                link.classList.add('active');
-            }
+            link.classList.toggle('active', isActive);
 
         });
 
@@ -98,42 +125,41 @@
 
 
     /* ========================================
-       GESTION DE LA NAVIGATION
+       05 — NAVIGATION
     ======================================== */
 
-    const navigate = () => {
+    const navigate = (page) => {
 
-        // Récupération de la page dans l'URL
-        let page = decodeURIComponent(
-            window.location.hash.substring(1)
-        );
+        if (!page) return;
 
-        // Page par défaut
-        if (!page) {
-            page = 'accueil';
-        }
+        // Construction de la nouvelle URL
+        const newUrl = `${basePath}?page=${encodeURIComponent(page)}`;
 
+        // Évite de recharger la même page
+        if (getCurrentPage() === page) return;
+
+        // Modification de l'URL sans rechargement
+        history.pushState(null, '', newUrl);
+
+        // Chargement du contenu
         loadPage(page);
 
     };
 
 
     /* ========================================
-       CLIC SUR LES LIENS
+       06 — CLIC SUR LES LIENS
     ======================================== */
 
     navLinks.forEach(link => {
 
         link.addEventListener('click', (event) => {
 
-            const page = link.dataset.page;
-
-            if (!page) return;
-
             event.preventDefault();
 
-            // Mise à jour de l'URL
-            window.location.hash = page;
+            const page = link.dataset.page;
+
+            navigate(page);
 
         });
 
@@ -141,16 +167,37 @@
 
 
     /* ========================================
-       HISTORIQUE DU NAVIGATEUR
+       07 — HISTORIQUE NAVIGATEUR
     ======================================== */
 
-    window.addEventListener('hashchange', navigate);
+    window.addEventListener('popstate', () => {
+
+        // Récupération de la page précédente
+        const page = getCurrentPage();
+
+        // Chargement de son contenu
+        loadPage(page);
+
+    });
 
 
     /* ========================================
-       INITIALISATION
+       08 — INITIALISATION
     ======================================== */
 
-    navigate();
+    const init = () => {
+
+        // Récupération de la page actuelle
+        const initialPage = getCurrentPage();
+
+        // Chargement initial
+        loadPage(initialPage);
+
+    };
+
+
+    // Démarrage
+    init();
+
 
 })();
