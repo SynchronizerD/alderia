@@ -1,8 +1,5 @@
 
-/* ========================================
-   VARIABLES
-======================================== */
-
+/* VARIABLES */
 :root {
     /* Colors */
     --background: #c7c6bf;
@@ -38,10 +35,7 @@
 
 }	
 
-/* ========================================
-   FONTS
-======================================== */
-
+/* FONTS */
 @font-face {font-family: 'Bebas';src: url('Fonts/Bebas-Regular.ttf') format('truetype');}
 @font-face {font-family: 'Beforetherain';src: url('Fonts/Before The Rain.ttf') format('truetype');}
 @font-face {font-family: 'LithosProblack';src: url('Fonts/LithosPro-Black.ttf') format('truetype');}
@@ -52,11 +46,7 @@
 @font-face {font-family: 'Milstage';src: url('Fonts/Milstage.ttf') format('truetype');}
 @font-face {font-family: 'MasterOfBreak';src: url('Fonts/master_of_break.ttf') format('truetype');}
 
-
-/* ========================================
-   BACKGROUND / TEXTURE GRAIN
-======================================== */
-
+/* BACKGROUND / TEXTURE GRAIN */
 html, body {
     min-height: 100%;
 }
@@ -82,10 +72,7 @@ body::before {
     background-repeat: repeat;
 }	
 		
-/* ========================================
-   HEADER
-======================================== */
-
+/* HEADER */
 header {
     position: relative;
     top: 0;
@@ -155,7 +142,6 @@ header {
     transform: translateX(-50%);
     z-index: 10;
 }	
-	
 .header-overlay-line{
 	background-image: url("Images/fond-header.png");
 	background-position: center center;
@@ -164,10 +150,7 @@ header {
 	height: 90px;
 }	
 
-/* ========================================
-   MAIN
-======================================== */	
-
+/* MAIN */	
 main {
     position: relative;
 	left: 50%;
@@ -185,6 +168,8 @@ main {
 .main-sidebar, .main-content{
 	background-color: var(--cadre2);
 }
+
+/* SIDEBAR */
 .main-sidebar {
     position: relative;
     width: 179px;
@@ -198,12 +183,7 @@ main {
 	left: 202px;
 }
 
-
-
-
-/* ========================================
-   MENU ACCORDEON
-======================================== */
+/* MENU ACCORDEON */
 .menu-accordeon {
     width: 100%;
 }	
@@ -217,7 +197,6 @@ main {
 	width: 100%;
 	text-align: center;
 }	
-/* TITRE */
 .menu-titre {
     display: flex;
     align-items: center;
@@ -234,12 +213,10 @@ main {
     cursor: pointer;
 	transition: color .35s ease;
 }
-
 .menu-titre p {
     margin: 2px 0;
     padding: 0;
 }	
-	
 .menu-item.active .menu-titre {
     color: var(--text4);
 }
@@ -289,22 +266,18 @@ main {
 .menu-titre-link:hover span {
 	background: linear-gradient(90deg, rgba(234, 229, 228, 1) 0%, rgba(77, 51, 99, 1) 48%);
 }		
-/* SOUS-MENU */
 .sous-menu {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-
     transition:
         max-height .55s cubic-bezier(.22, 1, .36, 1),
         opacity .4s ease;
 }
-/* OUVERTURE */
 .menu-item.active .sous-menu {
     max-height: 300px;
     opacity: 1;
 }
-/* LIENS */
 .sous-menu a {
     display: block;
     padding: 2px 0 2px 20px;
@@ -319,23 +292,20 @@ main {
         transform .45s cubic-bezier(.22, 1, .36, 1),
         color .25s ease;
 }	
-/* LIENS VISIBLES */
 .menu-item.active .sous-menu a {
     opacity: 1;
     transform: translateY(0);
 }	
-/* SURVOL */
 .sous-menu a:hover {
     color: var(--text4);
 }	
 .sous-menu a.active {
     color: var(--text1);
-    /* À adapter à tes variables */
 }
 
-
-
+/* SOCIALS */
 .socials {
+	margin-top: 10px;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -354,7 +324,7 @@ main {
     grid-column: 1 / -1;
 }
 
-
+/* MAIN PAGES */
 .main-content{
 	position: relative;
 	padding: 126px 18px 210px 18px;
@@ -434,10 +404,7 @@ main {
     }
 }
 	
-/* ========================================
-   FOOTER
-======================================== */
-
+/* FOOTER */
 footer {
     position: relative;
     bottom: 0;
@@ -492,10 +459,7 @@ footer {
     color: var(--text1);
 }
 	
-/* ========================================
-   PAGES ACCUEIL
-======================================== */	
-
+/* PAGES ACCUEIL */	
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr; /* Crée 2 colonnes de largeur égale */
