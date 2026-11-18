@@ -1,4 +1,3 @@
-
 /* ========================================
    ALDERIA — NAVIGATION DYNAMIQUE
    Fetch + Hash URL
@@ -6,17 +5,17 @@
 
 (() => {
 
-
     /* ========================================
        01 — CONFIGURATION
     ======================================== */
 
     const mainContent = document.querySelector('#main-content');
 
-    const navLinks = document.querySelectorAll('[data-page]');
-
-    // Dossier des pages HTML
+    // Dossier des pages HTML (la casse doit correspondre au vrai dossier)
     const pagesDirectory = './PAGES/';
+
+    // Page par défaut
+    const defaultPage = 'accueil';
 
 
     /* ========================================
@@ -24,9 +23,7 @@
     ======================================== */
 
     const getCurrentPage = () => {
-
-        return window.location.hash.replace(/^#/, '') || 'accueil';
-
+        return decodeURIComponent(window.location.hash.replace(/^#/, '')) || defaultPage;
     };
 
 
@@ -49,28 +46,34 @@
                 .join('/');
 
             // Récupération du fichier HTML
-            const response = await fetch(
-                `${pagesDirectory}${filePath}.html`
-            );
+            const response = await fetch(`${pagesDirectory}${filePath}.html`);
 
             if (!response.ok) {
                 throw new Error(`Page introuvable : ${page}`);
             }
 
-            // Lecture du contenu
+            // Lecture et analyse du contenu (page complète ou fragment)
             const html = await response.text();
+            const doc = new DOMParser().parseFromString(html, 'text/html');
+
+            // Les scripts de la page sont déjà chargés par l'index
+            doc.querySelectorAll('script').forEach(s => s.remove());
+
+            // Les chemins "../Images/..." deviennent "Images/..."
+            // (la page est affichée depuis la racine)
+            const contenu = doc.body.innerHTML.replaceAll('../', '');
 
             // Injection dans main-content
-            mainContent.innerHTML = html;
+            mainContent.innerHTML = contenu;
+
+            // Relance le slider si la page en contient un
+            if (typeof initSlider === 'function') initSlider();
 
             // Mise à jour des liens actifs
             updateActiveLink(page);
 
             // Retour en haut
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
 
         } catch (error) {
 
@@ -100,7 +103,7 @@
 
     const updateActiveLink = (page) => {
 
-        navLinks.forEach(link => {
+        document.querySelectorAll('[data-page]').forEach(link => {
 
             const linkPage = link.dataset.page;
 
@@ -123,32 +126,30 @@
 
         if (!page) return;
 
-        const newUrl = `#${page}`;
+        // Même page : on recharge directement (hashchange ne se déclencherait pas)
+        if (window.location.hash === `#${page}`) {
+            loadPage(page);
+            return;
+        }
 
-        // Évite de recharger la même page
-        if (window.location.hash === newUrl) return;
-
-        // Modification de l'URL
+        // Modification de l'URL (déclenche hashchange)
         window.location.hash = page;
 
     };
 
 
     /* ========================================
-       06 — CLIC SUR LES LIENS
+       06 — CLIC SUR LES LIENS (délégation)
+       Fonctionne aussi pour les liens ajoutés dynamiquement
     ======================================== */
 
-    navLinks.forEach(link => {
+    document.addEventListener('click', (event) => {
 
-        link.addEventListener('click', (event) => {
+        const link = event.target.closest('[data-page]');
+        if (!link) return;
 
-            event.preventDefault();
-
-            const page = link.dataset.page;
-
-            navigate(page);
-
-        });
+        event.preventDefault();
+        navigate(link.dataset.page);
 
     });
 
@@ -158,11 +159,7 @@
     ======================================== */
 
     window.addEventListener('hashchange', () => {
-
-        const page = getCurrentPage();
-
-        loadPage(page);
-
+        loadPage(getCurrentPage());
     });
 
 
@@ -170,17 +167,6 @@
        08 — INITIALISATION
     ======================================== */
 
-    const init = () => {
-
-        const initialPage = getCurrentPage();
-
-        loadPage(initialPage);
-
-    };
-
-
-    // Démarrage
-    init();
-
+    loadPage(getCurrentPage());
 
 })();
