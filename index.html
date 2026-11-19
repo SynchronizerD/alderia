@@ -1,157 +1,106 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!doctype html>
+<html>
 <head>
-<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Alderia</title>
-	<meta name="description" content="Bienvenue dans l'univers d'Alderia.">
-	<!-- STYLES CSS -->	
-	<link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<title>Document sans nom</title>
+<style>
+:root {
+    /* Colors */
+    --background: #c7c6bf;
+	
+    /* Fonts */
+    --font1: 'GOTHIC', sans-serif;
+
+    /* Sizes Fonts */
+	--size1: 12px;
+
+}	
+	
+/* FONTS */
+@font-face {font-family: 'GOTHIC';src: url('fonts/GOTHIC.ttf') format('truetype');}
+	
+/* BACKGROUND / TEXTURE GRAIN */
+html, body {
+    min-height: 100%;
+}
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background);
+    font-family: var(--font1);
+	font-size: var(--size1);
+    transition: all 0.3s ease;
+}
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.14;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+}
+	
+	
+.alderia_main{
+	position: relative;
+	margin: 0 auto;
+	padding: 0;
+	width: 1022px;
+}
+.alderia_main_top{
+	width: 100%;
+	height: 10px;
+	background-image: url("images/main-top.png");
+	background-position: bottom center;
+	background-repeat: no-repeat;
+}
+.alderia_main_center{
+	padding: 0 11px 0 11px;
+	background-image: url("images/main-center.png");
+	background-position: top center;
+	background-repeat: repeat-y;
+}
+	
+.main_content{
+	width: 100%;
+	
+	height: 550px;
+
+	background: linear-gradient(0deg, rgba(240, 228, 234, 1) 0%, rgba(213, 213, 212, 1) 30%, rgba(213, 213, 212, 1) 50%, rgba(213, 213, 212, 1) 70%, rgba(240, 227, 234, 1) 100%);
+}	
+	
+.alderia_main_bottom{
+	width: 100%;
+	height: 10px;
+	background-image: url("images/main-bottom.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+}	
+</style>	
 </head>
+
 <body>
-<!-- HEADER -->
-<header>
-	<!-- IMAGE DE FOND -->
-	<div class="header-background"></div>
-	<!-- IMAGE SUPERPOSÉE -->
-	<div class="header-overlay">
-		<div class="header-logo"><a href="index.html"></a></div>
-		<div class="headerbg2">
-			<a class="main-patreon" href=""><img src="Images/patreon.png" alt="Patreon"></a>
-			<img src="Images/header-beford.png" alt="">
-			<div class="main-map-schedule">
-				<div class="main-map">
-					<div class="mainms-box">
-						<div class="mainmap-img"></div>
-						<div class="main-map-scheduletitre"><a href="map.html">map d’alderia</a></div>
-					</div>
-				</div>
-				<div class="main-schedule">
-					<div class="mainms-box">
-						<div class="mainschedule-img"></div>
-						<div class="main-map-scheduletitre"><a href="#shailly-schedule" data-page="shailly-schedule">shailly schedule</a></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<img class="headerbg1" src="Images/header.png" alt="">
-		<div class="header-overlay-line"></div>
-	</div>
-</header>
+
+<div style="height: 40px;"></div>	
 	
-<!-- CONTENU PRINCIPAL -->
-<main>
-	<div class="main-sidebar">
-		<!-- CONTENU MENU -->
-		<nav class="menu-accordeon">
-			<h1>Home</h1>
-			<div class="menu-item">
-				<a class="menu-titre-link" href="#"><p>index</p><span></span></a>
-				<a class="menu-titre-link" href="#"><p>forum</p><span></span></a>
-			</div>
-			
-			<h1>Alderia World</h1>
-			<div class="menu-item">
-				<button class="menu-titre" type="button"><p>les bases d’alderia</p><span></span></button>
-				<div class="sous-menu">
-					<a href="#link1" data-page="link1">Link 1</a>
-					<a href="#link2" data-page="link2">Link 2</a>
-				</div>
-			</div>
-			<div class="menu-item">
-				<button class="menu-titre" type="button"><p>les peuples</p><span></span></button>
-				<div class="sous-menu">
-					<a href="#link1" data-page="link1">Link 1</a>
-					<a href="#link2" data-page="link2">Link 2</a>
-				</div>
-			</div>
-			<div class="menu-item">
-				<button class="menu-titre" type="button"><p>Les grandes divinités</p><span></span></button>
-				<div class="sous-menu">
-					<a href="#link1" data-page="link1">Link 1</a>
-					<a href="#link2" data-page="link2">Link 2</a>
-				</div>
-			</div>
-			<div class="menu-item">
-				<button class="menu-titre" type="button"><p>Personnage clé</p><span></span></button>
-				<div class="sous-menu">
-					<a href="#link1" data-page="link1">Link 1</a>
-					<a href="#link2" data-page="link2">Link 2</a>
-				</div>
-			</div>
-			
-			<h1>Book of Shailly</h1>
-			<div class="menu-item">
-				<button class="menu-titre" type="button"><p>about me</p><span></span></button>
-				<div class="sous-menu">
-					<a href="#link1" data-page="link1">Link 1</a>
-					<a href="#link2" data-page="link2">Link 2</a>
-				</div>
-			</div>
-			<div class="menu-item">
-				<button class="menu-titre" type="button"><p>socials</p><span></span></button>
-				<div class="sous-menu">
-					<a href="#link1" data-page="link1">Link 1</a>
-					<a href="#link2" data-page="link2">Link 2</a>
-				</div>
-			</div>
-			<div class="menu-item">
-				<button class="menu-titre" type="button"><p>crédits</p><span></span></button>
-				<div class="sous-menu">
-					<a href="#link1" data-page="link1">Link 1</a>
-					<a href="#link2" data-page="link2">Link 2</a>
-				</div>
-			</div>
-		</nav>
+<div class="alderia_main">
+	<div class="alderia_main_top"></div>
+	<div class="alderia_main_center">
 		
-		<!-- CONTENU SOCIALS -->
-		<div class="socials">
-			<a href="#" class="social-main"><img style="height: 60px;width: auto;" src="Images/Twitch.png" alt="Twitch"></a>
-			<a href="#"><img style="height: 50px;width: auto;" src="Images/you-asmr.png" alt="ASMR"></a>
-			<a href="#"><img style="height: 50px;width: auto;" src="Images/you-vtuber.png" alt="Vtuber"></a>
-		</div>
+		<div class="main_content">
+			<center>tttttttttttttttt<br>aaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaa</center>
+			
+		</div>	
+		
 	</div>
+	<div class="alderia_main_bottom"></div>
+</div>	
 	
-	<!-- CONTENU DES PAGES -->
-	<div class="main-content" id="main-content">
-		<!-- Le contenu des pages sera chargé ici -->
-	</div>
-</main>
-	
-<!-- FOOTER -->
-<footer>
-	<!-- IMAGE DE FOND -->
-	<div class="footer-background"></div>
-	<!-- BARRE + IMAGE SUPERPOSÉE -->
-	<div class="footer-overlay">
-		<img src="Images/footer.png" alt="">
-		<div class="footer-overlay-line">
-			<div class="footer-copy">
-				alderia-world © shailly - Version 8.3 - synchronizer 2006-2026
-			</div>
-		</div>
-	</div>
-</footer>	
-	
-<!-- JAVASCRIPT -->
-<script src="JS/script.js"></script>
-<script src="JS/slide.js"></script>	
-<script>
-/* MENU ACCORDEON EXCLUSIF */
-document.querySelectorAll('.menu-titre').forEach(button => {
-    button.addEventListener('click', function() {
-        const item = this.closest('.menu-item');
-        const isOpen = item.classList.contains('active');
-        // Fermer tous les menus
-        document.querySelectorAll('.menu-item').forEach(menu => {
-            menu.classList.remove('active');
-        });
-        // Ouvrir uniquement celui qui a été cliqué
-        if (!isOpen) {
-            item.classList.add('active');
-        }
-    });
-});
-</script>
 </body>
 </html>
