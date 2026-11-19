@@ -8,20 +8,31 @@
     /* Colors */
     --background: #c7c6bf;
 	
+	--gradient1: rgba(240, 228, 234, 1);
+    --gradient2: rgba(213, 213, 212, 1);
+	
+	--txt1: #7890af;
+	
     /* Fonts */
     --font1: 'GOTHIC', sans-serif;
+	--font2: 'TrajanProRegular', sans-serif;
 
     /* Sizes Fonts */
 	--size1: 12px;
+	--size2: 8px;
 
 }	
 	
 /* FONTS */
 @font-face {font-family: 'GOTHIC';src: url('fonts/GOTHIC.ttf') format('truetype');}
+@font-face {font-family: 'TrajanProRegular';src: url('Fonts/TrajanPro-Regular.ttf') format('truetype');}	
 	
 /* BACKGROUND / TEXTURE GRAIN */
 html, body {
     min-height: 100%;
+}
+body {
+    overflow-x: auto;
 }
 body {
     position: relative;
@@ -30,9 +41,14 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+
     background-color: var(--background);
+    background-image: url("images/background.png");
+    background-position: center top;
+    background-repeat: no-repeat;
+
     font-family: var(--font1);
-	font-size: var(--size1);
+    font-size: var(--size1);
     transition: all 0.3s ease;
 }
 body::before {
@@ -47,11 +63,69 @@ body::before {
 }
 	
 	
+/* HEADER */
+.header{
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 6;
+	width: 1400px;
+	height: 371px;
+	background: url("images/header.png") center top no-repeat;
+	
+}
+.header-logo{
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 16;
+    width: 1400px;
+}	
+.header-logo a{
+	position: absolute;
+	z-index: 3;
+	margin-left: 70px;
+	width: 430px;
+	height: 161px;
+	background-image: url("images/logo.png");
+	background-position: center center;
+	background-repeat: repeat;
+}	
+.header_barre{
+	position: absolute;
+	top: 42px;
+	left: 0px;
+	z-index: 5;
+	width: 100%;
+	height: 109px;
+	background: url("images/barre-top.png") left top repeat-x;
+}
+.bg-barre{
+	position: relative;
+	width: 1400px;
+	height: 109px;
+	margin-left: calc((100vw - 1400px) / 2);
+	background: url("images/bg-barre-top.png") center center no-repeat;
+}	
+.bg-barre span{
+	position: absolute;
+	bottom: 9px;
+	left: 430px;
+	font-family: var(--font2);
+	font-size: var(--size2);
+	color: var(--txt1);
+}	
+	
+	
 /* CONTENEUR PRINCIPAL */
 .alderia_main {
     position: relative;
+    z-index: 5;
     width: 1022px;
-    margin: 0 auto;
+    margin-top: 216px;
+    margin-left: calc((100vw - 1022px) / 2);
     padding: 0;
 }
 
@@ -61,52 +135,112 @@ body::before {
     height: 10px;
     background: url("images/main-top.png") center top no-repeat;
 }
-
-/* CENTER */
-.alderia_main_center {
-    box-sizing: border-box;
-    padding: 0 11px;
-    background: url("images/main-center.png") center top repeat-y;
-}
-
-/* CONTENT */
-.main_content {
-    min-height: 550px;
-    background: linear-gradient(
-        0deg,
-        rgba(240, 228, 234, 1) 0%,
-        rgba(213, 213, 212, 1) 30%,
-        rgba(213, 213, 212, 1) 50%,
-        rgba(213, 213, 212, 1) 70%,
-        rgba(240, 227, 234, 1) 100%
-    );
-}
-
+	
 /* BOTTOM */
 .alderia_main_bottom {
     width: 100%;
     height: 10px;
     background: url("images/main-bottom.png") center top no-repeat;
 }	
+
+/* CENTER */
+.alderia_main_center {
+	position: relative;
+    box-sizing: border-box;
+    padding: 0 11px;
+    background: url("images/main-center.png") center top repeat-y;
+}	
+
+/* CONTENT */
+.main_content {
+	position: relative;
+	display: grid;
+    grid-template-columns: 191px 1fr;
+    min-height: 450px;
+    background: linear-gradient(
+        0deg,
+        var(--gradient1) 0%,
+        var(--gradient2) 30%,
+        var(--gradient2) 50%,
+        var(--gradient2) 70%,
+        var(--gradient1) 100%
+    );
+}
+
+/* MAIN MENU */	
+.main_menu{
+	position: relative;
+	left: 0px;
+	width: 191px;
+	height: 100%;
+}
+.main_menu_top{
+	position: absolute;
+	z-index: 6;
+	top: -58px;
+	left: 0;
+	width: 191px;
+	height: 183px;
+	background-image: url("images/menu-top.png");
+}	
+.main_menu_bottom {
+    position: absolute;
+    z-index: 6;
+    bottom: -48px;
+    left: 0;
+    width: 191px;
+    height: 162px;
+    background: url("images/menu-bottom.png") center bottom no-repeat;
+}
+.main_menu_center{
+	padding: 128px 10px 118px 10px;
+
+	background: url("images/menu-center.png") center top repeat-y;
+}
+	
+	
+/* MAIN CONTENU */	
+.main_contenu{
+	padding: 10px;
+}	
+	
+	
+	
 </style>	
 </head>
 
 <body>
 
-<div style="height: 40px;"></div>	
+<!-- HEADER -->
+<div class="header">
+	<div class="header-logo"><a href="index.html"></a></div>
+</div>
+<div class="header_barre">
+	<div class="bg-barre"><span>alderia world - 8.3 - shailly aneliya</span></div>
+</div>	
 	
+<!-- CONTENU PRINCIPAL -->	
 <div class="alderia_main">
 	<div class="alderia_main_top"></div>
 	<div class="alderia_main_center">
 		
 		<div class="main_content">
-			<center>tttttttttttttttt<br>aaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaa</center>
-			
+			<div class="main_menu">
+				<div class="main_menu_top"></div>
+				
+				<div class="main_menu_center">Menu 01<br>Menu 02<br>Menu 03<br>Menu 04<br>Menu 05<br>Menu 06<br>Menu 07<br>Menu 08<br>Menu 09<br>Menu 10</div>
+					
+				<div class="main_menu_bottom"></div>	
+			</div>
+			<div class="main_contenu">eeeeeeeeeeeeeeeee</div>
 		</div>	
 		
 	</div>
 	<div class="alderia_main_bottom"></div>
 </div>	
+
+	
+		
 	
 </body>
 </html>
