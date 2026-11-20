@@ -14,21 +14,31 @@
 	--txt1: #7890af;
 	--txt2: #385071;
 	--txt3: #386a93;
+	--txt4: #4d84b7;
+	--txt5: #7a314d;
+	--txt6: #374e6f;
 	
     /* Fonts */
     --font1: 'GOTHIC', sans-serif;
 	--font2: 'TrajanProRegular', sans-serif;
+	--font3: 'TrajanPro3SemiBold', sans-serif;
+	--font4: 'MasterOfBreak', sans-serif;
 
     /* Sizes Fonts */
 	--size1: 12px;
 	--size2: 8px;
 	--size3: 10px;
+	--size4: 19px;
 
 }	
 	
 /* FONTS */
 @font-face {font-family: 'GOTHIC';src: url('fonts/GOTHIC.ttf') format('truetype');}
-@font-face {font-family: 'TrajanProRegular';src: url('fonts/TrajanPro-Regular.ttf') format('truetype');}	
+@font-face {font-family: 'TrajanProRegular';src: url('fonts/TrajanPro-Regular.ttf') format('truetype');}
+@font-face {font-family: 'TrajanPro3SemiBold';src: url('fonts/TrajanPro3SemiBold.ttf') format('truetype');}	
+@font-face {font-family: 'MasterOfBreak';src: url('fonts/master_of_break.ttf') format('truetype');}	
+	
+	
 	
 /* BACKGROUND / TEXTURE GRAIN */
 html, body {
@@ -121,7 +131,7 @@ body::before {
 }
 .header_patreon{
 	position: absolute;
-	bottom: 12px;
+	bottom: 8px;
 	left: 50%;
 	transform: translateX(-50%);
 	width: 1000px;
@@ -246,10 +256,186 @@ body::before {
 .main_menu_center{
 	height: 100%;
 	box-sizing: border-box;
-	padding: 156px 10px 118px 10px;
+	padding: 154px 10px 118px 10px;
 	background: url("images/menu-center.png") center top repeat-y;
 }
+
+
 	
+	
+
+
+/* ========================================
+   ACCORDION
+======================================== */
+
+.accordion {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+	
+.accordion h1{
+	font-size: var(--size4);
+	font-family: var(--font4);
+	color: var(--txt6);
+	font-weight: 400;
+	margin: 2px 0 2px 0;
+	margin-left: -6px !important;
+	width: 100%;
+	text-align: center;
+}	
+
+/* ========================================
+   GROUPE
+======================================== */
+
+.accordion-group {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ========================================
+   TITRE
+======================================== */
+	
+.accordion-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+	margin: 0;
+    cursor: pointer;
+	font-size: var(--size3);
+	font-family: var(--font3);
+	color: var(--txt5);
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.accordion-title p{
+	margin: 0;
+	padding: 0;
+}	
+
+	
+.accordion-title span{
+	flex: 1;
+    display: block;
+	background: linear-gradient(90deg, rgba(234, 229, 228, 1) 0%, rgba(122, 49, 77, 1) 48%);
+    box-sizing: border-box;
+	height: 1px;
+	transition: background .4s ease;
+}
+
+/* ========================================
+   CONTENU
+======================================== */
+
+.accordion-content {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    box-sizing: border-box;
+}
+
+.accordion-contenu {
+    width: 100%;
+    box-sizing: border-box;
+}	
+	
+/* ========================================
+   LIENS
+======================================== */
+
+.accordion-content a {
+    display: block;
+    padding: 3px 5px;
+	font-family: var(--font2);
+	font-size: var(--size3);
+    color: var(--txt4);
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.accordion-content a:hover {
+    color: var(--txt5);
+}
+	
+.accordion-contenu a {
+    display: flex;
+	align-items: center;
+    padding: 1px 0;
+	font-family: var(--font3);
+	font-size: var(--size3);
+    color: var(--txt4);
+    text-decoration: none;
+    box-sizing: border-box;
+}
+.accordion-contenu a p {
+    padding: 0;
+	margin: 0;
+}
+.accordion-contenu a span {
+    flex: 1;
+    display: block;
+	background: linear-gradient(90deg, rgba(234, 229, 228, 1) 0%, rgba(77, 132, 183, 1) 48%);
+    box-sizing: border-box;
+	height: 1px;
+	transition: background .4s ease;
+}	
+.accordion-contenu a:hover {
+    color: var(--txt5);
+}	
+.accordion-contenu a:hover span {
+	background: linear-gradient(90deg, rgba(234, 229, 228, 1) 0%, rgba(77, 51, 99, 1) 48%);
+}		
+
+/* ========================================
+   GROUPE OUVERT
+======================================== */
+
+.accordion-group.active .accordion-content {
+    max-height: 800px;
+}
+
+	
+	
+
+	
+	
+	
+	
+	
+	
+.socials {
+	margin-top: 15px;
+    width: 171px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.socials img {
+    display: block;
+    object-fit: cover;
+}
+.socials > a img {
+    width: 88px;
+}
+.socials-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.socials-bottom a img {
+    width: 56px;
+}	
 	
 /* MAIN CONTENU */	
 .main_contenu{
@@ -316,7 +502,100 @@ body::before {
 			<div class="main_menu">
 				<div class="main_menu_top"></div>
 				
-				<div class="main_menu_center">Menu</div>
+				<div class="main_menu_center">
+					
+					
+					<div class="accordion">
+						
+						<h1>Home</h1>
+						<div class="accordion-contenu">
+							<a href="#"><p>index</p><span></span></a>
+							<a href="#"><p>forum</p><span></span></a>
+						</div>
+						
+						<h1>Alderia World</h1>
+						<!-- GROUPE 1 -->
+						<div class="accordion-group">
+							<div class="accordion-title">
+								<p>les bases d’alderia</p>
+								<span></span>
+							</div>
+							<div class="accordion-content">
+								<a href="#">Les volumes d'aide au RPG</a>
+								<a href="#">Les runes</a>
+								<a href="#">La chronologie des évènements</a>
+								<a href="#">Les mythes et légendes du monde</a>
+								<a href="#">Le bestiaire</a>
+							</div>
+						</div>
+						
+						<!-- GROUPE 2 -->
+						<div class="accordion-group">
+							<div class="accordion-title">
+								<p>les peuples</p>
+								<span></span>
+							</div>
+							<div class="accordion-content">
+								<a href="#">Les grands peuples</a>
+								<a href="#">Les passeurs</a>
+								<a href="#">Les anciens peuples</a>
+								<a href="#">Les mondes</a>
+								<a href="#">Les relations inter race</a>
+								<a href="#">La cartographie</a>
+							</div>
+						</div>
+						
+						<!-- GROUPE 3 -->
+						<div class="accordion-group">
+							<div class="accordion-title">
+								<p>les grandes divinités</p>
+								<span></span>
+							</div>
+							<div class="accordion-content">
+								<a href="#">Lorella | Déesse de la nature</a>
+								<a href="#">Arion | Dieu de la victoire</a>
+								<a href="#">Kira | Dieu de l'intelligence</a>
+								<a href="#">Shillen | Déesse de l'enfer</a>
+								<a href="#">Gran Kain | Dieu de la destruction</a>
+								<a href="#">Noria | Déesse de protection</a>
+								<a href="#">Knl'Ka | Dieu de la destruction</a>
+							</div>
+						</div>
+						
+						<!-- GROUPE 4 -->
+						<div class="accordion-group">
+							<div class="accordion-title">
+								<p>personnage clé</p>
+								<span></span>
+							</div>
+							<div class="accordion-content">
+								<a href="#">Liste des prés définis</a>
+								<a href="#">Personnage important de l'histoire</a>
+								<a href="#">Personnage secondaire de l'histoire</a>
+							</div>
+						</div>
+						
+						<h1>Book of Shailly</h1>
+						<div class="accordion-contenu">
+							<a href="#"><p>about me</p><span></span></a>
+							<a href="#"><p>socials</p><span></span></a>
+							<a href="#"><p>crédits</p><span></span></a>
+						</div>
+					
+					</div>
+
+					
+					
+					<!-- STREAM RESEAU -->
+					<div class="socials">
+						<a href="#"><img src="images/twitch.png" alt="Twitch"></a>
+						<div class="socials-bottom">
+							<a href="#"><img src="images/you-asmr.png" alt="ASMR"></a>
+							<a href="#"><img src="images/you-vtuber.png" alt="Vtuber"></a>
+						</div>
+					</div>
+					
+				</div>
 					
 				<div class="main_menu_bottom"></div>	
 			</div>
@@ -333,7 +612,32 @@ body::before {
 		<div class="footer_copy">alderia-world © shailly - synchronizer 2006-2027</div>
 	</div>
 </div>
-		
+
+	
+<script>
+
+document.querySelectorAll('.accordion-title').forEach(title => {
+
+    title.addEventListener('click', () => {
+
+        const currentGroup = title.closest('.accordion-group');
+        const isOpen = currentGroup.classList.contains('active');
+
+        // Fermer tous les groupes
+        document.querySelectorAll('.accordion-group').forEach(group => {
+            group.classList.remove('active');
+        });
+
+        // Ouvrir le groupe cliqué s'il était fermé
+        if (!isOpen) {
+            currentGroup.classList.add('active');
+        }
+
+    });
+
+});
+
+</script>	
 	
 </body>
 </html>
