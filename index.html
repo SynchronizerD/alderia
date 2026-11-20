@@ -12,6 +12,8 @@
     --gradient2: rgba(213, 213, 212, 1);
 	
 	--txt1: #7890af;
+	--txt2: #385071;
+	--txt3: #386a93;
 	
     /* Fonts */
     --font1: 'GOTHIC', sans-serif;
@@ -20,6 +22,7 @@
     /* Sizes Fonts */
 	--size1: 12px;
 	--size2: 8px;
+	--size3: 10px;
 
 }	
 	
@@ -47,6 +50,7 @@ body {
     background-repeat: no-repeat;
     font-family: var(--font1);
     font-size: var(--size1);
+	color: var(--txt2);
     transition: all 0.3s ease;
 }
 body::before {
@@ -127,7 +131,43 @@ body::before {
 	width: 191px;
 	height: 44px;
 }	
-	
+.header_map_schedule {
+	position: absolute;
+	top: 233px;
+	left: 400px;
+	z-index: 12;
+    display: grid;
+    grid-template-columns: 139px 227px;
+    gap: 10px; /* espace entre les deux div */
+}
+.header_map, .header_schedule{
+	position: relative;
+	height: 112px;
+}	
+.header_map{
+	width: 139px;
+	background: url("images/map.png") center center no-repeat;
+}	
+.header_schedule{
+	width: 227px;
+	background: url("images/schedule.png") center center no-repeat;
+}
+.header_map a, .header_schedule a{
+	position: absolute;
+	bottom: 12px;
+	display: block;
+	width: 100%;
+	text-align: center;
+	color: var(--txt3);
+	font-family: var(--font2);
+	font-size: var(--size3);
+	font-weight: 600;
+	text-decoration: none;
+	transition: all 0.3s ease;
+}		
+.header_map a:hover, .header_schedule a:hover{
+	color: var(--txt2);
+}
 	
 /* CONTENEUR PRINCIPAL */
 .alderia_main {
@@ -211,7 +251,7 @@ body::before {
 	
 /* MAIN CONTENU */	
 .main_contenu{
-	padding: 10px;
+	padding: 122px 10px 10px 10px;
 }	
 	
 
@@ -256,6 +296,10 @@ body::before {
 <div class="header">
 	<div class="header-logo"><a href="index.html"></a></div>
 	<div class="header_patreon"><a href="#"><img src="images/patreon.png" alt="Patreon"></a></div>
+	<div class="header_map_schedule">
+		<div class="header_map"><a href="#">map d’alderia</a></div>
+			<div class="header_schedule"><a href="#">shailly schedule</a></div>
+	</div>
 </div>
 <div class="header_barre">
 	<div class="bg-barre"><span>alderia world - 8.3 - shailly aneliya</span></div>
