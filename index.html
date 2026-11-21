@@ -31,17 +31,16 @@
 				<div class="main_menu_top"></div>	
 				<div class="main_menu_center">
 					<div class="accordion">
-						<h1>Home</h1>
+						<img src="images/home.png" alt="">
 						<div class="accordion-contenu">
-							<a href="#"><p>index</p><span></span></a>
-							<a href="#"><p>forum</p><span></span></a>
+							<a href="#"><img src="images/index.png" alt=""></a>
+							<a href="#"><img src="images/forum.png" alt=""></a>
 						</div>
-						<h1>Alderia World</h1>
+						<img src="images/alderia-world.png" alt="">
 						<!-- GROUPE 1 -->
 						<div class="accordion-group">
 							<div class="accordion-title">
-								<p>les bases d’alderia</p>
-								<span></span>
+								<img src="images/les-bases-alderia.png" alt="">
 							</div>
 							<div class="accordion-content">
 								<a href="#">Les volumes d'aide au RPG</a>
@@ -54,8 +53,7 @@
 						<!-- GROUPE 2 -->
 						<div class="accordion-group">
 							<div class="accordion-title">
-								<p>les peuples</p>
-								<span></span>
+								<img src="images/les-peuples.png" alt="">
 							</div>
 							<div class="accordion-content">
 								<a href="#">Les grands peuples</a>
@@ -69,8 +67,7 @@
 						<!-- GROUPE 3 -->
 						<div class="accordion-group">
 							<div class="accordion-title">
-								<p>les grandes divinités</p>
-								<span></span>
+								<img src="images/les-grandes-divites.png" alt="">
 							</div>
 							<div class="accordion-content">
 								<a href="#">Lorella | Déesse de la nature</a>
@@ -85,8 +82,7 @@
 						<!-- GROUPE 4 -->
 						<div class="accordion-group">
 							<div class="accordion-title">
-								<p>personnage clé</p>
-								<span></span>
+								<img src="images/personnage-cle.png" alt="">
 							</div>
 							<div class="accordion-content">
 								<a href="#">Liste des prés définis</a>
@@ -94,11 +90,11 @@
 								<a href="#">Personnage secondaire de l'histoire</a>
 							</div>
 						</div>
-						<h1>Book of Shailly</h1>
+						<img src="images/book-of-shailly.png" alt="">
 						<div class="accordion-contenu">
-							<a href="#"><p>about me</p><span></span></a>
-							<a href="#"><p>socials</p><span></span></a>
-							<a href="#"><p>crédits</p><span></span></a>
+							<a href="#"><img src="images/ABOUT-ME.png" alt=""></a>
+							<a href="#"><img src="images/SOCIALS.png" alt=""></a>
+							<a href="#"><img src="images/CREDIT.png" alt=""></a>
 						</div>
 					</div>
 					<!-- STREAM RESEAU -->
@@ -126,28 +122,8 @@
 		<div class="footer_copy">alderia-world © shailly - synchronizer 2006-2027</div>
 	</div>
 </div>
-
-<script>
-document.querySelectorAll('.accordion-title').forEach(title => {
-
-    title.addEventListener('click', () => {
-
-        const currentGroup = title.closest('.accordion-group');
-        const isOpen = currentGroup.classList.contains('active');
-
-        // Fermer tous les groupes
-        document.querySelectorAll('.accordion-group').forEach(group => {
-            group.classList.remove('active');
-        });
-
-        // Ouvrir le groupe cliqué s'il était fermé
-        if (!isOpen) {
-            currentGroup.classList.add('active');
-        }
-
-    });
-
-});
-</script>	
+	
+<!-- JAVASCRIPT -->
+<script src="JS/script.js"></script>	
 </body>
 </html>
