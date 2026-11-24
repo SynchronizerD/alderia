@@ -19,6 +19,7 @@
 	--font2: 'TrajanProRegular', sans-serif;
 	--font3: 'TrajanPro3SemiBold', sans-serif;
 	--font4: 'MasterOfBreak', sans-serif;
+	--font5: 'OratorStd', sans-serif;
 
     /* Sizes Fonts */
 	--size1: 12px;
@@ -33,7 +34,8 @@
 @font-face {font-family: 'GOTHIC';src: url('fonts/GOTHIC.ttf') format('truetype');}
 @font-face {font-family: 'TrajanProRegular';src: url('fonts/TrajanPro-Regular.ttf') format('truetype');}
 @font-face {font-family: 'TrajanPro3SemiBold';src: url('fonts/TrajanPro3SemiBold.ttf') format('truetype');}	
-@font-face {font-family: 'MasterOfBreak';src: url('fonts/master_of_break.ttf') format('truetype');}	
+@font-face {font-family: 'MasterOfBreak';src: url('fonts/master_of_break.ttf') format('truetype');}
+@font-face {font-family: 'OratorStd';src: url('fonts/OratorStd.otf') format('opentype');font-weight: normal;font-style: normal;}
 		
 /* BACKGROUND / TEXTURE GRAIN */
 html, body {
@@ -258,9 +260,7 @@ body.iframe-page {
     flex-direction: column;
     gap: 1px;
 }
-
 .accordion img{width: 191px;height: 34px;margin: 6px 0;}
-
 
 /* GROUPE */
 .accordion-group {
@@ -275,7 +275,6 @@ body.iframe-page {
 	cursor: pointer;
 	margin: 0;
 }
-
 
 /* CONTENU */
 .accordion-content {
@@ -296,13 +295,12 @@ body.iframe-page {
 	margin: 0;
 }
 
-	
 /* LIENS */
 .accordion-content a {
     display: block;
     padding: 3px 0px 3px 10px;
-	font-family: var(--font3);
-	font-size: var(--size2);
+	font-family: var(--font5);
+	font-size: var(--size3);
     color: var(--txt4);
 	font-weight: 500;
     text-decoration: none;
@@ -311,8 +309,6 @@ body.iframe-page {
 .accordion-content a:hover {
     color: var(--txt5);
 }	
-
-		
 
 /* GROUPE OUVERT */
 .accordion-group.active .accordion-content {
