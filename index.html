@@ -109,6 +109,60 @@
 				<div class="main_menu_bottom"></div>	
 			</div>
 			<div class="main_contenu">
+				
+				<div class="slide-double">
+					<!-- BLOC 1 -->
+					<div class="slider dots-left" data-delay="4000">
+						<div class="slide" style="background-image: url('images/sl01.png');">
+							<div class="content1">
+								<span class="title">TITLE</span>
+								<span class="text">TEXTE HERE</span>
+								<a class="link" href="#">LINK HERE</a>
+							</div>
+						</div>
+						<div class="slide" style="background-image: url('images/sl02.png');">
+							<div class="content1">
+								<span class="title">TITLE 2</span>
+								<span class="text">TEXTE HERE</span>
+								<a class="link" href="#">LINK HERE</a>
+							</div>
+						</div>
+						<div class="slide" style="background-image: url('images/sl03.png');">
+							<div class="content1">
+								<span class="title">TITLE 3</span>
+								<span class="text">TEXTE HERE</span>
+								<a class="link" href="#">LINK HERE</a>
+							</div>
+						</div>
+					</div>
+					<!-- BLOC 2 -->
+					<div class="slider" data-delay="5000">
+						<div class="slide" style="background-image: url('images/sl02.png');">
+							<div class="content">
+								<span class="title">TITLE</span>
+								<span class="text">TEXTE HERE</span>
+								<a class="link" href="#">LINK HERE</a>
+							</div>
+						</div>
+						<div class="slide" style="background-image: url('images/sl03.png');">
+							<div class="content">
+								<span class="title">TITLE 2</span>
+								<span class="text">TEXTE HERE</span>
+								<a class="link" href="#">LINK HERE</a>
+							</div>
+						</div>
+						<div class="slide" style="background-image: url('images/sl04.png');">
+							<div class="content">
+								<span class="title">TITLE 3</span>
+								<span class="text">TEXTE HERE</span>
+								<a class="link" href="#">LINK HERE</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+				
 				Page d'accueil d'Alderia.<br>A venir.
 			</div>
 		</div>	
@@ -145,6 +199,45 @@ document.querySelectorAll('.accordion-title').forEach(title => {
     });
 
 });	
+</script>
+	
+<script>
+// Un seul script pour tous les blocs .slider de la page
+document.querySelectorAll('.slider').forEach(function (slider) {
+  var slides = slider.querySelectorAll('.slide');
+  var delay  = parseInt(slider.dataset.delay, 10) || 4000;
+  var current = 0, timer;
+ 
+  var dots = document.createElement('div');
+  dots.className = 'dots';
+  slides.forEach(function (_, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('aria-label', 'Slide ' + (i + 1));
+    b.addEventListener('click', function () { show(i); restart(); });
+    dots.appendChild(b);
+  });
+  slider.appendChild(dots);
+  var buttons = dots.querySelectorAll('button');
+ 
+  function show(n) {
+    slides[current].classList.remove('active');
+    buttons[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    buttons[current].classList.add('active');
+  }
+  function restart() {
+    clearInterval(timer);
+    timer = setInterval(function () { show(current + 1); }, delay);
+  }
+ 
+  slider.addEventListener('mouseenter', function () { clearInterval(timer); });
+  slider.addEventListener('mouseleave', restart);
+ 
+  show(0);
+  restart();
+});
 </script>	
 </body>
 </html>
