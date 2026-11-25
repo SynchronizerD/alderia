@@ -5,14 +5,15 @@
 <title>Alseria</title>
 <meta name="description" content="Bienvenue dans l'univers d'Alderia.">
 <!-- STYLES CSS -->	
-<link rel="stylesheet" href="styles.css">		
+<link rel="stylesheet" href="styles.css">	
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>	
 </head>
 
 <body>
 <!-- HEADER -->
 <div class="header">
 	<div class="header-logo"><a href="index.html"></a></div>
-	<div class="header_patreon"><a href="#"><img src="images/patreon.png" alt="Patreon"></a></div>
+	<div class="header_patreon"><a href="#"><img src="images/menu/patreon.png" alt="Patreon"></a></div>
 	<div class="header_map_schedule">
 		<div class="header_map"><a href="#">map d’alderia</a></div>
 			<div class="header_schedule"><a href="#">shailly schedule</a></div>
@@ -31,16 +32,22 @@
 				<div class="main_menu_top"></div>	
 				<div class="main_menu_center">
 					<div class="accordion">
-						<img src="images/home.png" alt="">
+						<img src="images/menu/home.png" alt="">
 						<div class="accordion-contenu">
-							<a href="#"><img src="images/index.png" alt=""></a>
-							<a href="#"><img src="images/forum.png" alt=""></a>
+							<a href="#"><img src="images/menu/index.png" alt=""></a>
 						</div>
-						<img src="images/alderia-world.png" alt="">
+						
+						<img src="images/menu/vtuber.png" alt="">
+						<div class="accordion-contenu">
+							<a href="#"><img src="images/menu/forum.png" alt=""></a>
+							<a href="#"><img src="images/menu/projet-eclyps.png" alt=""></a>
+						</div>
+						
+						<img src="images/menu/alderia-world.png" alt="">
 						<!-- GROUPE 1 -->
 						<div class="accordion-group">
 							<div class="accordion-title">
-								<img src="images/les-bases-alderia.png" alt="">
+								<img src="images/menu/les-bases-alderia.png" alt="">
 							</div>
 							<div class="accordion-content">
 								<a href="#">Les volumes d'aide au RPG</a>
@@ -51,83 +58,135 @@
 							</div>
 						</div>
 						<!-- GROUPE 2 -->
-						<div class="accordion-group">
-							<div class="accordion-title">
-								<img src="images/les-peuples.png" alt="">
-							</div>
-							<div class="accordion-content">
-								<a href="#">Les grands peuples</a>
-								<a href="#">Les passeurs</a>
-								<a href="#">Les anciens peuples</a>
-								<a href="#">Les mondes</a>
-								<a href="#">Les relations inter race</a>
-								<a href="#">La cartographie</a>
-							</div>
-						</div>
+<!-- GROUPE 2 : ARBRE MONDE -->
+<div class="accordion-group">
+
+    <div class="accordion-title">
+        <img src="images/menu/arbre-monde.png" alt="">
+    </div>
+
+    <div class="accordion-content">
+
+        <a href="#">Être suprême</a>
+        <a href="#">Dieux primordiaux</a>
+
+        <!-- SOUS-GROUPE ALDERIA -->
+        <div class="accordion-group accordion-subgroup">
+
+            <div class="accordion-title">
+                <img src="images/menu/Alderia.png" alt="">
+            </div>
+
+            <div class="accordion-content">
+                <a href="#">3 Dimensions</a>
+                <a href="#">Le Valia</a>
+                <a href="#">Noria</a>
+            </div>
+
+        </div>
+		
+		<a href="#">Les Naramiels</a>
+        <a href="#">Les passeurs</a>
+
+    </div>
+
+</div>
 						<!-- GROUPE 3 -->
 						<div class="accordion-group">
 							<div class="accordion-title">
-								<img src="images/les-grandes-divites.png" alt="">
+								<img src="images/menu/le-monde.png" alt="">
 							</div>
 							<div class="accordion-content">
-								<a href="#">Lorella | Déesse de la nature</a>
-								<a href="#">Arion | Dieu de la victoire</a>
-								<a href="#">Kira | Dieu de l'intelligence</a>
-								<a href="#">Shillen | Déesse de l'enfer</a>
-								<a href="#">Gran Kain | Dieu de la destruction</a>
-								<a href="#">Noria | Déesse de protection</a>
-								<a href="#">Knl'Ka | Dieu de la destruction</a>
+								<a href="#">Les races</a>
+								<a href="#">Les anciens peuples</a>
+								<a href="#">Relation inter race</a>
+								<a href="#">Cartographie</a>
+								<a href="#">Les influents</a>
 							</div>
 						</div>
 						<!-- GROUPE 4 -->
 						<div class="accordion-group">
 							<div class="accordion-title">
-								<img src="images/personnage-cle.png" alt="">
+								<img src="images/menu/le-bestiaire.png" alt="">
 							</div>
 							<div class="accordion-content">
-								<a href="#">Liste des prés définis</a>
-								<a href="#">Personnage important de l'histoire</a>
-								<a href="#">Personnage secondaire de l'histoire</a>
+								<a href="#">Rang Primordial</a>
+								<a href="#">Rang S</a>
+								<a href="#">Rang A</a>
+								<a href="#">Rang A</a>
+								<a href="#">Rang B</a>
+								<a href="#">Rang C</a>
+								<a href="#">Bestiaire inférieur</a>
 							</div>
 						</div>
-						<img src="images/book-of-shailly.png" alt="">
-						<div class="accordion-contenu">
-							<a href="#"><img src="images/ABOUT-ME.png" alt=""></a>
-							<a href="#"><img src="images/SOCIALS.png" alt=""></a>
-							<a href="#"><img src="images/CREDIT.png" alt=""></a>
+						<img src="images/menu/book-of-shailly.png" alt="">
+						<div class="accordion-group">
+							<div class="accordion-title">
+								<img src="images/menu/ABOUT-ME.png" alt="">
+							</div>
+							<div class="accordion-content">
+								<a href="#">Lore</a>
+								<a href="#">Mon activité</a>
+								<a href="#">My work</a>
+								<a href="#">Artwork</a>
+								<a href="#">Spicy Space</a>
+							</div>
 						</div>
+						<div class="accordion-group">
+							<div class="accordion-title">
+								<img src="images/menu/SOCIALS.png" alt="">
+							</div>
+							<div class="accordion-content">
+								<a href="#">Discord</a>
+								<a href="#">Instagram</a>
+								<a href="#">Fansly</a>
+								<a href="#">Twitch H24</a>
+								<a href="#">TikTok</a>
+							</div>
+						</div>
+						<div class="accordion-group">
+							<div class="accordion-title">
+								<img src="images/menu/CREDIT.png" alt="">
+							</div>
+							<div class="accordion-content">
+								<a href="#">Crédit Alderia</a>
+								<a href="#">Crédit Shailly</a>
+							</div>
+						</div>
+						
+						
+						
 					</div>
 					<!-- STREAM RESEAU -->
 					<div class="socials">
-						<a href="#"><img src="images/twitch.png" alt="Twitch"></a>
+						<a href="#"><img src="images/menu/twitch.png" alt="Twitch"></a>
 						<div class="socials-bottom">
-							<a href="#"><img src="images/you-asmr.png" alt="ASMR"></a>
-							<a href="#"><img src="images/you-vtuber.png" alt="Vtuber"></a>
+							<a href="#"><img src="images/menu/you-asmr.png" alt="ASMR"></a>
+							<a href="#"><img src="images/menu/you-vtuber.png" alt="Vtuber"></a>
 						</div>
 					</div>
 				</div>	
 				<div class="main_menu_bottom"></div>	
 			</div>
 			<div class="main_contenu">
-				
 				<div class="slide-double">
 					<!-- BLOC 1 -->
 					<div class="slider dots-left" data-delay="4000">
-						<div class="slide" style="background-image: url('images/sl01.png');">
+						<div class="slide" style="background-image: url('images/silde/sl01.png');">
 							<div class="content1">
 								<span class="title">TITLE</span>
 								<span class="text">TEXTE HERE</span>
 								<a class="link" href="#">LINK HERE</a>
 							</div>
 						</div>
-						<div class="slide" style="background-image: url('images/sl02.png');">
+						<div class="slide" style="background-image: url('images/silde/sl02.png');">
 							<div class="content1">
 								<span class="title">TITLE 2</span>
 								<span class="text">TEXTE HERE</span>
 								<a class="link" href="#">LINK HERE</a>
 							</div>
 						</div>
-						<div class="slide" style="background-image: url('images/sl03.png');">
+						<div class="slide" style="background-image: url('images/silde/sl03.png');">
 							<div class="content1">
 								<span class="title">TITLE 3</span>
 								<span class="text">TEXTE HERE</span>
@@ -137,21 +196,21 @@
 					</div>
 					<!-- BLOC 2 -->
 					<div class="slider" data-delay="5000">
-						<div class="slide" style="background-image: url('images/sl02.png');">
+						<div class="slide" style="background-image: url('images/silde/sl02.png');">
 							<div class="content">
 								<span class="title">TITLE</span>
 								<span class="text">TEXTE HERE</span>
 								<a class="link" href="#">LINK HERE</a>
 							</div>
 						</div>
-						<div class="slide" style="background-image: url('images/sl03.png');">
+						<div class="slide" style="background-image: url('images/silde/sl03.png');">
 							<div class="content">
 								<span class="title">TITLE 2</span>
 								<span class="text">TEXTE HERE</span>
 								<a class="link" href="#">LINK HERE</a>
 							</div>
 						</div>
-						<div class="slide" style="background-image: url('images/sl04.png');">
+						<div class="slide" style="background-image: url('images/silde/sl04.png');">
 							<div class="content">
 								<span class="title">TITLE 3</span>
 								<span class="text">TEXTE HERE</span>
@@ -161,9 +220,10 @@
 					</div>
 				</div>
 				
-				
-				
-				Page d'accueil d'Alderia.<br>A venir.
+				<div id="page-alderia">
+					Chargement...
+				</div>
+					
 			</div>
 		</div>	
 	</div>
@@ -181,24 +241,38 @@
 <script>
 document.querySelectorAll('.accordion-title').forEach(title => {
 
-    title.addEventListener('click', () => {
+    title.addEventListener('click', function (e) {
 
-        const currentGroup = title.closest('.accordion-group');
+        e.stopPropagation();
+
+        const currentGroup = this.closest('.accordion-group');
+
+        if (!currentGroup) return;
+
+        // CAS PARTICULIER : ALDERIA
+        if (currentGroup.classList.contains('accordion-subgroup')) {
+
+            currentGroup.classList.toggle('active');
+
+            return;
+        }
+
+        // État du menu principal
         const isOpen = currentGroup.classList.contains('active');
 
-        // Fermer tous les groupes
-        document.querySelectorAll('.accordion-group').forEach(group => {
+        // Fermer tous les menus principaux
+        document.querySelectorAll('.accordion > .accordion-group').forEach(group => {
             group.classList.remove('active');
         });
 
-        // Ouvrir le groupe cliqué s'il était fermé
+        // Ouvrir le menu principal cliqué
         if (!isOpen) {
             currentGroup.classList.add('active');
         }
 
     });
 
-});	
+});
 </script>
 	
 <script>
@@ -239,5 +313,25 @@ document.querySelectorAll('.slider').forEach(function (slider) {
   restart();
 });
 </script>	
+	
+<script>
+$(document).ready(function () {
+
+    // Accueil par défaut
+    $('#page-alderia').load('pages/accueil.html');
+
+    // Navigation du menu
+    $(document).on('click', '[data-page]', function (e) {
+        e.preventDefault();
+
+        let page = $(this).attr('href');
+
+        $('#page-alderia').load(page);
+
+    });
+
+});
+</script>	
+	
 </body>
 </html>

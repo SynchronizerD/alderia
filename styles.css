@@ -53,7 +53,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: var(--background);
-    background-image: url("images/background.png");
+    background-image: url("images/header/background.png");
     background-position: center top;
     background-repeat: no-repeat;
     font-family: var(--font1);
@@ -87,7 +87,7 @@ body.iframe-page {
 	z-index: 6;
 	width: 1400px;
 	height: 371px;
-	background: url("images/header.png") center top no-repeat;
+	background: url("images/header/header.png") center top no-repeat;
 }
 .header-logo{
 	position: absolute;
@@ -103,7 +103,7 @@ body.iframe-page {
 	margin-left: 70px;
 	width: 430px;
 	height: 161px;
-	background-image: url("images/logo.png");
+	background-image: url("images/header/logo.png");
 	background-position: center center;
 	background-repeat: repeat;
 }	
@@ -114,14 +114,14 @@ body.iframe-page {
 	z-index: 5;
 	width: 100%;
 	height: 109px;
-	background: url("images/barre-top.png") left top repeat-x;
+	background: url("images/header/barre-top.png") left top repeat-x;
 }
 .bg-barre{
 	position: relative;
 	width: 1400px;
 	height: 109px;
 	margin-left: calc((100vw - 1400px) / 2);
-	background: url("images/bg-barre-top.png") center center no-repeat;
+	background: url("images/header/bg-barre-top.png") center center no-repeat;
 }	
 .bg-barre span{
 	position: absolute;
@@ -158,11 +158,11 @@ body.iframe-page {
 }	
 .header_map{
 	width: 139px;
-	background: url("images/map.png") center center no-repeat;
+	background: url("images/header/map.png") center center no-repeat;
 }	
 .header_schedule{
 	width: 227px;
-	background: url("images/schedule.png") center center no-repeat;
+	background: url("images/header/schedule.png") center center no-repeat;
 }
 .header_map a, .header_schedule a{
 	position: absolute;
@@ -311,10 +311,15 @@ body.iframe-page {
     color: var(--txt5);
 }	
 
-/* GROUPE OUVERT */
-.accordion-group.active .accordion-content {
+
+/* GROUPE OUVERT : uniquement son contenu direct */
+.accordion-group.active > .accordion-content {
     max-height: 800px;
 }
+
+
+
+
 	
 /* GROUPE SOCIALS */
 .socials {
@@ -366,7 +371,7 @@ body.iframe-page {
 	width: 387px;
 	height:119px;
 	overflow:hidden;
-	background-image: url("images/slidebg.png");
+	background-image: url("images/silde/slidebg.png");
 }
 .slide {
     position:absolute;
@@ -426,7 +431,7 @@ body.iframe-page {
 	position: relative;
 	width: 100%;
 	height: 166px;
-	background: url("images/footer-band.png") left bottom repeat-x;
+	background: url("images/footer/footer-band.png") left bottom repeat-x;
 }
 .footer{
 	position: absolute;
@@ -436,7 +441,7 @@ body.iframe-page {
 	z-index: 10;
     width: 1400px;
 	height: 489px;
-	background: url("images/footer.png") center bottom no-repeat;
+	background: url("images/footer/footer.png") center bottom no-repeat;
 }
 .footer_copy{
 	position: absolute;
