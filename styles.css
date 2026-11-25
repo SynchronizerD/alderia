@@ -310,17 +310,10 @@ body.iframe-page {
 .accordion-content a:hover {
     color: var(--txt5);
 }	
-
-
-/* GROUPE OUVERT : uniquement son contenu direct */
 .accordion-group.active > .accordion-content {
     max-height: 800px;
 }
 
-
-
-
-	
 /* GROUPE SOCIALS */
 .socials {
 	margin-top: 15px;
@@ -456,4 +449,42 @@ body.iframe-page {
 	font-family: var(--font2);
 	font-size: var(--size2);
 	color: var(--txt1);
-}	
+}
+
+
+/* PAGES DU SITE */
+.alderia-page{
+	margin: 10px 0 0 0;
+	width: 791px;
+	box-sizing:border-box;
+}
+
+.alderia-page-top{
+	width: 791px;
+	height: 19px;
+	background: url("images/alderia-page-top.png") bottom center no-repeat;
+}
+.alderia-page-center{
+	width: 773px;
+	padding: 0 9px;
+	background: url("images/alderia-page-center.png") top center repeat-y;
+}
+.alderia-page-bottom{
+	width: 791px;
+	height: 21px;
+	background: url("images/alderia-page-bottom.png") top center no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
