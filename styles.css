@@ -208,10 +208,12 @@ body.iframe-page {
     background: url("images/main-center.png") center top repeat-y;
 }	
 .main_content {
-	position: relative;
-	display: grid;
+    position: relative;
+    display: grid;
     grid-template-columns: 191px 1fr;
     min-height: 450px;
+    align-items: stretch;
+
     background: linear-gradient(
         0deg,
         var(--gradient1) 0%,
@@ -221,6 +223,10 @@ body.iframe-page {
         var(--gradient1) 100%
     );
 }
+
+
+
+
 
 /* MAIN MENU */	
 .main_menu{
@@ -343,11 +349,19 @@ body.iframe-page {
 }	
 
 /* MAIN CONTENU */	
+
+
 .main_contenu {
-	position: relative;
+    position: relative;
     padding: 122px 10px 10px 10px;
     box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
 }
+
+
 
 /* MAIN SLIDE */	
 .slide-double {
@@ -453,14 +467,15 @@ body.iframe-page {
 }
 
 /* PAGES DU SITE */
-.alderia-page {
-	margin: 6px 0 0 0;
-	width: 791px;
-	height: 100vh;
-	box-sizing: border-box;
 
-	display: flex;
-	flex-direction: column;
+.alderia-page {
+    margin: 6px 0 0 0;
+    width: 791px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .alderia-page-top {
@@ -470,19 +485,15 @@ body.iframe-page {
 	background: url("images/alderia-page-top.png") bottom center no-repeat;
 }
 
-
 .alderia-page-center {
-	width: 791px;
-	padding: 0 9px;
-	box-sizing: border-box;
+    width: 791px;
+    padding: 0 9px;
+    box-sizing: border-box;
 
-	flex: 1;
-	min-height: 0;
+    flex: 1 1 auto;
 
-	background: url("images/alderia-page-center.png") top center repeat-y;
+    background: url("images/alderia-page-center.png") top center repeat-y;
 }
-
-
 
 
 
