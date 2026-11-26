@@ -150,7 +150,7 @@ body.iframe-page {
 	z-index: 22;
     display: grid;
     grid-template-columns: 139px 227px;
-    gap: 10px;
+    gap: 18px;
 }
 .header_map, .header_schedule{
 	position: relative;
@@ -352,7 +352,7 @@ body.iframe-page {
 /* MAIN SLIDE */	
 .slide-double {
 	display:flex;
-	gap:10px;
+	gap:17px;
 	width:100%;
 	margin-top: 6px;
 }
