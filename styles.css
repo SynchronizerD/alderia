@@ -453,27 +453,47 @@ body.iframe-page {
 }
 
 /* PAGES DU SITE */
-.alderia-page{
+.alderia-page {
 	margin: 6px 0 0 0;
 	width: 791px;
-	box-sizing:border-box;
+	height: 100vh;
+	box-sizing: border-box;
+
+	display: flex;
+	flex-direction: column;
 }
 
-.alderia-page-top{
+.alderia-page-top {
 	width: 791px;
 	height: 19px;
+	flex-shrink: 0;
 	background: url("images/alderia-page-top.png") bottom center no-repeat;
 }
-.alderia-page-center{
-	width: 773px;
+
+
+.alderia-page-center {
+	width: 791px;
 	padding: 0 9px;
+	box-sizing: border-box;
+
+	flex: 1;
+	min-height: 0;
+
 	background: url("images/alderia-page-center.png") top center repeat-y;
 }
-.alderia-page-bottom{
+
+
+
+
+
+
+.alderia-page-bottom {
 	width: 791px;
 	height: 21px;
+	flex-shrink: 0;
 	background: url("images/alderia-page-bottom.png") top center no-repeat;
 }
+
 
 /* PAGES D'ACCUEIL' */
 .alderia-index {
@@ -491,6 +511,6 @@ body.iframe-page {
 }
 
 
-
+.alderia-volumes{}
 
 
