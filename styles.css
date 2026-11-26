@@ -467,7 +467,6 @@ body.iframe-page {
 }
 
 /* PAGES DU SITE */
-
 .alderia-page {
     margin: 6px 0 0 0;
     width: 791px;
@@ -477,14 +476,12 @@ body.iframe-page {
     flex-direction: column;
     flex: 1;
 }
-
 .alderia-page-top {
 	width: 791px;
 	height: 19px;
 	flex-shrink: 0;
 	background: url("images/alderia-page-top.png") bottom center no-repeat;
 }
-
 .alderia-page-center {
     width: 791px;
     padding: 0 9px;
@@ -494,10 +491,6 @@ body.iframe-page {
 
     background: url("images/alderia-page-center.png") top center repeat-y;
 }
-
-
-
-
 .alderia-page-bottom {
 	width: 791px;
 	height: 21px;
@@ -522,6 +515,9 @@ body.iframe-page {
 }
 
 
-.alderia-volumes{}
+.alderia-volumes{
+	background: url("images/box/mythe.png") top center no-repeat;
+	background-size: 773px;
+}
 
 
