@@ -81,8 +81,8 @@ body.iframe-page {
 /* HEADER */
 .header{
 	position: absolute;
-	top: 0px;
-	left: 50%;
+	top: -226px;
+	left: 40%;
 	transform: translateX(-50%);
 	z-index: 6;
 	width: 1400px;
@@ -136,7 +136,7 @@ body.iframe-page {
 	bottom: 8px;
 	left: 50%;
 	transform: translateX(-50%);
-	width: 1000px;
+	width: 1032px;
 	height: 44px;
 }	
 .header_patreon a{
@@ -145,9 +145,9 @@ body.iframe-page {
 }	
 .header_map_schedule {
 	position: absolute;
-	top: 233px;
-	left: 400px;
-	z-index: 12;
+	top: 10px;
+	left: 10px;
+	z-index: 22;
     display: grid;
     grid-template-columns: 139px 227px;
     gap: 10px;
@@ -344,6 +344,7 @@ body.iframe-page {
 
 /* MAIN CONTENU */	
 .main_contenu {
+	position: relative;
     padding: 122px 10px 10px 10px;
     box-sizing: border-box;
 }
@@ -451,10 +452,9 @@ body.iframe-page {
 	color: var(--txt1);
 }
 
-
 /* PAGES DU SITE */
 .alderia-page{
-	margin: 10px 0 0 0;
+	margin: 6px 0 0 0;
 	width: 791px;
 	box-sizing:border-box;
 }
@@ -475,14 +475,20 @@ body.iframe-page {
 	background: url("images/alderia-page-bottom.png") top center no-repeat;
 }
 
+/* PAGES D'ACCUEIL' */
+.alderia-index {
+	position: relative;
+	padding: 4px 10px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 15px;
+}
+.alderia-index p{margin: 0 0 5px 0;}
 
-
-
-
-
-
-
-
+.alderia-index img{
+	position: absolute;
+	top: -15px;
+}
 
 
 
