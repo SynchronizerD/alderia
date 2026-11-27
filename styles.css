@@ -520,5 +520,9 @@ body.iframe-page {
 	background-size: 773px;
 	padding: 10px;
 }
-
+.alderia-cartographie{
+	background: url("images/box/cartographie.png") top center no-repeat;
+	background-size: 773px;
+	padding: 10px;
+}
 
